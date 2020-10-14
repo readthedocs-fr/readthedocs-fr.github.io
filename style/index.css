@@ -14,8 +14,18 @@ footer {
 footer {
     color: white;
     text-align: center;
-    font-family: 'Saira Stencil One', cursive;
-    
+    padding: 0.2em 0;
+    font-size: 1.125em;
+    font-family: 'Commissioner', cursive;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(150,220,150);
+}
+
+a:hover {
+    color: rgb(50, 175, 50);
 }
 
 .center {
@@ -43,13 +53,9 @@ footer {
     height: 3.5vh;
 }
 
-.socials li a:visited {
-    color: inherit;
-}
-
 .socials li a span {
     margin-left: 0.35em;
     color: white;
     font-size: 2.5em;
-    font-family: 'Saira Stencil One', cursive;
+    font-family: 'Staatliches', cursive;
 }
