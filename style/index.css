@@ -1,0 +1,42 @@
+:root {
+    --rtd-bg-color: #111111;
+}
+
+body {
+    margin: 0;
+}
+
+main header {
+    background-color: var(--rtd-bg-color);
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.socials {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.socials li a {
+    fill: white;
+}
+
+.socials li a:visited {
+    color: inherit;
+}
+
+.socials li a svg {
+    width: 3em;
+}
+
+.socials li a span {
+    margin-left:0.35em;
+    color: white;
+    font-size: 3em;
+    font-family: 'Saira Stencil One', cursive;
+}
