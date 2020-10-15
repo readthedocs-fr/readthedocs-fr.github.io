@@ -28,32 +28,53 @@ a:hover {
     color: rgb(50, 175, 50);
 }
 
+article {
+    margin-bottom: 1vh;
+    padding: 0 1vw;
+}
+
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-.logo {
+.card {
+    box-shadow: 2px 2px 5px black;
+    min-width: 15vw;
+    max-width: 25vw;
+    margin-bottom: 2vh;
+    margin-right: 2vw;
+    padding: 1vh 1.5vw;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#logo {
     height: 20vh;
 }
 
-.logo svg {
+#logo svg {
     height: 22.5vh;
 }
 
-.socials {
+#socials {
     list-style: none;
     display: flex;
     justify-content: space-evenly;
 }
 
-.socials li a svg {
+#socials li a svg {
     fill: white;
-    height: 3.5vh;
+    height: 2em;
 }
 
-.socials li a span {
+#socials li a span {
     margin-left: 0.35em;
     color: white;
     font-size: 2.5em;
