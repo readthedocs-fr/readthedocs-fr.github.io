@@ -4,6 +4,7 @@
 
 body {
     margin: 0;
+    font-family: 'Overpass', sans-serif;
 }
 
 header,
@@ -55,6 +56,28 @@ article {
     justify-content: center;
 }
 
+.links {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.links li {
+    margin: 0 1vw;
+}
+
+article h1 {
+    font-size: 2em;
+    border-bottom: 0.4em ridge rgba(50, 180, 70, .6);
+    padding: 0 0.75em;
+    width: max-content;
+}
+
+article a {
+    color: #4D4;
+}
+
 #logo {
     height: 20vh;
 }
@@ -79,4 +102,20 @@ article {
     color: white;
     font-size: 2.5em;
     font-family: 'Staatliches', cursive;
+}
+
+#socials li a .discord:hover {
+    color: #8ea1e1;
+}
+
+#socials li a .github:hover {
+    color: #2c974b;
+}
+
+#socials li a .youtube:hover {
+    color: #f00;
+}
+
+#socials li a .twitch:hover {
+    color: #af7afe;
 }
