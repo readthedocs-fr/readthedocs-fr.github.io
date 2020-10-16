@@ -43,7 +43,7 @@ article {
 .card {
     box-shadow: 1px 1px 6px green;
     min-width: 15vw;
-    max-width: 25vw;
+    max-width: 35vw;
     margin: 1em;
     padding: 1vh 1.5vw;
 }
