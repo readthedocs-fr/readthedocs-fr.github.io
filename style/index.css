@@ -41,12 +41,17 @@ article {
 }
 
 .card {
-    box-shadow: 2px 2px 5px black;
+    box-shadow: 1px 1px 6px green;
     min-width: 15vw;
     max-width: 25vw;
-    margin-bottom: 2vh;
-    margin-right: 2vw;
+    margin: 1em;
     padding: 1vh 1.5vw;
+}
+
+.card h3 {
+    font-style: italic;
+    font-weight: 100;
+    font-size: 0.9em;
 }
 
 .cards {
