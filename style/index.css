@@ -8,8 +8,15 @@ body {
 }
 
 header,
+nav,
 footer {
     background-color: var(--rtd-bg-color);
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    padding-top: 0.25em;
 }
 
 footer {
@@ -103,10 +110,6 @@ article a {
     height: 30vh;
 }
 
-#logo {
-    height: 20vh;
-}
-
 #logo svg {
     height: 22.5vh;
 }
@@ -115,6 +118,7 @@ article a {
     list-style: none;
     display: flex;
     justify-content: space-evenly;
+    margin: 0;
 }
 
 #socials li a svg {
