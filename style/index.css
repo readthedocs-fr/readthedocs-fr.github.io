@@ -47,6 +47,10 @@ article {
     margin-right: auto;
 }
 
+.text-center {
+    text-align: center;
+}
+
 .card {
     box-shadow: 1px 1px 6px green;
     min-width: 15vw;
@@ -59,6 +63,15 @@ article {
     font-style: italic;
     font-weight: 100;
     font-size: 0.9em;
+}
+
+.card-v2 {
+    box-shadow: 0 2px 16px #0001;
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 2em 2.5em;
+    background: #fff;
+    border-radius: 10px;
 }
 
 .cards {
