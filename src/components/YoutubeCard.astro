@@ -1,0 +1,15 @@
+---
+const { title, date, description, videoId } = Astro.props;
+---
+
+<article class="card">
+  <h2>{title}</h2>
+  <h3>{date}</h3>
+  <p>{description}</p>
+  <iframe
+    class="center"
+    src=`https://www.youtube-nocookie.com/embed/${videoId}`
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+</article>
