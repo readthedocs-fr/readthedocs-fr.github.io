@@ -1,0 +1,163 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Communauté Read the Docs">
+  <article id="about-us">
+    <h1>Qui sommes-nous ?</h1>
+    <div>
+      <p>
+        Nous sommes une
+        <strong>communauté francophone de programmation</strong> présente sur Discord.
+        <br />
+        Comme l'aspect visuel de ce site le sous-entend, nous ne sommes pas experts
+        en design, mais bien développeurs.
+      </p>
+
+      <p>
+        Nous sommes avant tout <strong>un serveur d'entraide</strong>, n'hésitez
+        pas à nous rejoindre si vous souhaitez être guidé vers de bonnes
+        ressources, vers un apprentissage autonome de qualité, via l'aide de
+        bénévoles de bonne volonté.
+        <br />
+        <strong
+          >Nous ne vous donnerons pas de code tout fait, mais nous vous
+          pousserons à vous améliorer</strong
+        >
+        en programmation.
+      </p>
+
+      <p>
+        La communauté est invitée à participer via la
+        <strong>création de projets</strong> sur l'organisation GitHub, via la réalisation
+        de <strong>lives</strong>
+        sur Discord ou encore sur Twitch.
+        <br />
+        N'hésitez pas à contribuer à ce site si vous le souhaitez, afin qu'il soit
+        plus attrayant.
+      </p>
+      <p>
+        Afin que chacun puisse profiter de ces lives, nous proposons
+        généralement une rediffusion (de ceux officiels du moins) qui peut
+        cependant mettre un certain temps à arriver étant donné qu'il faut a
+        minima faire une miniature et uploader la vidéo.
+        <br />
+        Il se peut que du montage vidéo soit nécessaire, repoussant encore davantage
+        la sortie de la rediffusion.
+      </p>
+      <p>
+        Si vous êtes intéressé, n'hésitez pas à
+        <a href="http://discord.readthedocs.fr/">
+          rejoindre le serveur discord</a
+        >.
+      </p>
+    </div>
+  </article>
+  <article id="github">
+    <h1>L'organisation GitHub</h1>
+    <p>
+      Vous pouvez voir ici les projets les plus importants présents sur
+      l'organisation GitHub :
+    </p>
+    <div class="cards">
+      <article class="card">
+        <h2>bin-server</h2>
+        <p>
+          Un service d'hébergement de snippet de codes. Plusieurs clients
+          (extensions pour IDE et un bot discord) existent sur l'orga.
+        </p>
+        <ul class="links">
+          <li>
+            <a href="https://github.com/readthedocs-fr/bin-server"
+              >Dépôt GitHub</a
+            >
+          </li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Notions</h2>
+        <p>
+          Ce dépôt contient des cours et des fiches pratiques sur des sujets
+          techniques ainsi que des exercices traitant de concepts particuliers.
+        </p>
+        <ul class="links">
+          <li>
+            <a href="https://github.com/readthedocs-fr/notions">Dépôt GitHub</a>
+          </li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>PVC discord bot</h2>
+        <h3>Private VoIP Channels</h3>
+        <p>
+          Un bot discord permettant de créer des salons vocaux temporaires façon
+          TeamSpeak. Il suffit d'entrer dans le salon prévu à cet effet et votre
+          salon privé sera automatiquement créé.
+        </p>
+        <ul class="links">
+          <li>
+            <a href="https://github.com/readthedocs-fr/pvc">Dépôt GitHub</a>
+          </li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>LiveApp MVP</h2>
+        <p>
+          Une application Electron permettant de lire le chat discord en faisant
+          autre chose en même temps.<br />
+          Un rewrite plus léger est en cours : il sera rendu disponible sur l'organisation
+          GitHub quand il sera un minimum utilisable.
+        </p>
+        <ul class="links">
+          <li>
+            <a href="https://github.com/readthedocs-fr/liveapp-mvp"
+              >Dépôt GitHub</a
+            >
+          </li>
+        </ul>
+      </article>
+    </div>
+  </article>
+  <article id="youtube">
+    <h1>La chaîne YouTube</h1>
+    <p>
+      Vous trouverez ci-dessous quelques rediffusions de live disponibles sur la
+      chaîne YouTube :
+    </p>
+    <article class="cards">
+      <article class="card">
+        <h2>Un serveur IRC asynchrone en Python</h2>
+        <h3>19/10/2020</h3>
+        <p>Création d'un serveur IRC asynchrone minimaliste en Python</p>
+        <iframe
+          class="center"
+          src="https://www.youtube-nocookie.com/embed/oVQAyQF9jy8"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </article>
+      <article class="card">
+        <h2>Faire un Tetris en Python avec Pygame</h2>
+        <h3>11/07/2020</h3>
+        <p>Création d'un Tetris en Python avec pygame, par TNtube#9999.</p>
+        <iframe
+          class="center"
+          src="https://www.youtube-nocookie.com/embed/XXqM_a_IwVw"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </article>
+      <article class="card">
+        <h2>Un arbre AVL en Python</h2>
+        <h3>23/06/2020</h3>
+        <p>Implémentation d'un arbre AVL en Python par Yann#3290.</p>
+        <iframe
+          class="center"
+          src="https://www.youtube-nocookie.com/embed/JTiJW1FUh7A"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </article>
+    </article>
+  </article>
+</Layout>
