@@ -2,11 +2,6 @@
   --rtd-bg-color: #111111;
 }
 
-body {
-  margin: 0;
-  font-family: "Overpass", sans-serif;
-}
-
 header,
 nav,
 footer {
@@ -17,14 +12,6 @@ nav {
   position: sticky;
   top: 0;
   padding-top: 0.25em;
-}
-
-footer {
-  color: white;
-  text-align: center;
-  padding: 0.2em 0;
-  font-size: 1.125em;
-  font-family: "Commissioner", cursive;
 }
 
 a {
