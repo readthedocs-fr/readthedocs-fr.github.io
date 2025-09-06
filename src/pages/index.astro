@@ -1,4 +1,5 @@
 ---
+import Card from "@/components/Card.astro";
 import YoutubeCard from "@/components/YoutubeCard.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
@@ -61,7 +62,7 @@ import Layout from "@/layouts/Layout.astro";
       l'organisation GitHub :
     </p>
     <div class="cards">
-      <article class="card">
+      <Card>
         <h2>bin-server</h2>
         <p>
           Un service d'hébergement de snippet de codes. Plusieurs clients
@@ -74,8 +75,8 @@ import Layout from "@/layouts/Layout.astro";
             >
           </li>
         </ul>
-      </article>
-      <article class="card">
+      </Card>
+      <Card>
         <h2>Notions</h2>
         <p>
           Ce dépôt contient des cours et des fiches pratiques sur des sujets
@@ -86,8 +87,8 @@ import Layout from "@/layouts/Layout.astro";
             <a href="https://github.com/readthedocs-fr/notions">Dépôt GitHub</a>
           </li>
         </ul>
-      </article>
-      <article class="card">
+      </Card>
+      <Card>
         <h2>PVC discord bot</h2>
         <h3>Private VoIP Channels</h3>
         <p>
@@ -100,8 +101,8 @@ import Layout from "@/layouts/Layout.astro";
             <a href="https://github.com/readthedocs-fr/pvc">Dépôt GitHub</a>
           </li>
         </ul>
-      </article>
-      <article class="card">
+      </Card>
+      <Card>
         <h2>LiveApp MVP</h2>
         <p>
           Une application Electron permettant de lire le chat discord en faisant
@@ -116,7 +117,7 @@ import Layout from "@/layouts/Layout.astro";
             >
           </li>
         </ul>
-      </article>
+      </Card>
     </div>
   </article>
   <article id="youtube">

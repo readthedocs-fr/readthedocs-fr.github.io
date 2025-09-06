@@ -1,163 +1,144 @@
 :root {
-    --rtd-bg-color: #111111;
+  --rtd-bg-color: #111111;
 }
 
 body {
-    margin: 0;
-    font-family: 'Overpass', sans-serif;
+  margin: 0;
+  font-family: "Overpass", sans-serif;
 }
 
 header,
 nav,
 footer {
-    background-color: var(--rtd-bg-color);
+  background-color: var(--rtd-bg-color);
 }
 
 nav {
-    position: sticky;
-    top: 0;
-    padding-top: 0.25em;
+  position: sticky;
+  top: 0;
+  padding-top: 0.25em;
 }
 
 footer {
-    color: white;
-    text-align: center;
-    padding: 0.2em 0;
-    font-size: 1.125em;
-    font-family: 'Commissioner', cursive;
+  color: white;
+  text-align: center;
+  padding: 0.2em 0;
+  font-size: 1.125em;
+  font-family: "Commissioner", cursive;
 }
 
 a {
-    text-decoration: none;
-    color: rgb(150,220,150);
+  text-decoration: none;
+  color: rgb(150, 220, 150);
 }
 
 a:hover {
-    color: rgb(50, 175, 50);
-}
-
-article {
-    margin-bottom: 1vh;
-    padding: 0 1vw;
+  color: rgb(50, 175, 50);
 }
 
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .text-center {
-    text-align: center;
-}
-
-.card {
-    box-shadow: 1px 1px 6px green;
-    min-width: 15vw;
-    max-width: 35vw;
-    margin: 1em;
-    padding: 1vh 1.5vw;
-}
-
-.card h3 {
-    font-style: italic;
-    font-weight: 100;
-    font-size: 0.9em;
+  text-align: center;
 }
 
 .card-v2 {
-    box-shadow: 0 2px 16px #0001;
-    max-width: 600px;
-    margin: 60px auto;
-    padding: 2em 2.5em;
-    background: #fff;
-    border-radius: 10px;
+  box-shadow: 0 2px 16px #0001;
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 2em 2.5em;
+  background: #fff;
+  border-radius: 10px;
 }
 
 .cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .links {
-    list-style: none;
-    padding-left: 0;
-    display: flex;
-    justify-content: center;
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .links li {
-    margin: 0 1vw;
+  margin: 0 1vw;
 }
 
 article h1 {
-    font-size: 2em;
-    border-bottom: 0.4em ridge rgba(50, 180, 70, .6);
-    padding: 0 0.75em;
-    width: max-content;
+  font-size: 2em;
+  border-bottom: 0.4em ridge rgba(50, 180, 70, 0.6);
+  padding: 0 0.75em;
+  width: max-content;
 }
 
 article a {
-    color: #4D4;
+  color: #4d4;
 }
 
 #about-us div {
-    max-width: 75vw;
-    font-size: 1.25em;
-    margin: auto;
+  max-width: 75vw;
+  font-size: 1.25em;
+  margin: auto;
 }
-  
+
 #github > p,
 #youtube > p {
-    margin-bottom: 0.5em;
-    display:flex;
-    justify-content: center;
-    font-size: 1.25em;
+  margin-bottom: 0.5em;
+  display: flex;
+  justify-content: center;
+  font-size: 1.25em;
 }
 
 #youtube iframe {
-    margin-bottom: 1em;
-    width: 30vw;
-    height: 30vh;
+  margin-bottom: 1em;
+  width: 30vw;
+  height: 30vh;
 }
 
 #logo svg {
-    height: 22.5vh;
+  height: 22.5vh;
 }
 
 #socials {
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
 }
 
 #socials li a svg {
-    fill: white;
-    height: 2em;
+  fill: white;
+  height: 2em;
 }
 
 #socials li a span {
-    margin-left: 0.35em;
-    color: white;
-    font-size: 2.5em;
-    font-family: 'Staatliches', cursive;
+  margin-left: 0.35em;
+  color: white;
+  font-size: 2.5em;
+  font-family: "Staatliches", cursive;
 }
 
 #socials li a .discord:hover {
-    color: #8ea1e1;
+  color: #8ea1e1;
 }
 
 #socials li a .github:hover {
-    color: #2c974b;
+  color: #2c974b;
 }
 
 #socials li a .youtube:hover {
-    color: #f00;
+  color: #f00;
 }
 
 #socials li a .twitch:hover {
-    color: #af7afe;
+  color: #af7afe;
 }

@@ -1,8 +1,10 @@
 ---
+import Card from "./Card.astro";
+
 const { title, date, description, videoId } = Astro.props;
 ---
 
-<article class="card">
+<Card>
   <h2>{title}</h2>
   <h3>{date}</h3>
   <p>{description}</p>
@@ -14,4 +16,4 @@ const { title, date, description, videoId } = Astro.props;
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen></iframe>
-</article>
+</Card>
