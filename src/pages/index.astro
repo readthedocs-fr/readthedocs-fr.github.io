@@ -32,6 +32,46 @@ const youtubeCards: YoutubeVideo[] = [
   },
 ];
 
+type GitHubProject = {
+  title: string;
+  subtitle?: string;
+  description: string;
+  repository: string;
+};
+
+const githubProjects: GitHubProject[] = [
+  {
+    title: "RTD BIN",
+    description: `
+        Un service d'hébergement de snippet de codes.
+        Plusieurs clients (extensions pour IDE et un bot discord) existent sur l'orga.`,
+    repository: "bin-server",
+  },
+  {
+    title: "Notions",
+    description: `
+        Ce dépôt contient des cours et des fiches pratiques sur des sujets
+        techniques ainsi que des exercices traitant de concepts particuliers.`,
+    repository: "notions",
+  },
+  {
+    title: "PVC discord bot",
+    subtitle: "Private VoIP Channels",
+    description: `
+        Un bot discord permettant de créer des salons vocaux temporaires façon
+        TeamSpeak. Il suffit d'entrer dans le salon prévu à cet effet et votre
+        salon privé sera automatiquement créé.`,
+    repository: "pvc",
+  },
+  {
+    title: "LiveApp MVP",
+    description: `
+        Une application Electron permettant de lire le chat discord en faisant
+        autre chose en même temps.`,
+    repository: "liveapp-mvp",
+  },
+];
+
 // TODO fix accessibilité titres (2 h1 dans la page)
 ---
 
@@ -93,35 +133,17 @@ const youtubeCards: YoutubeVideo[] = [
       l'organisation GitHub :
     </p>
     <CardsContainer>
-      <GitHubCard title="bin-server" repository="bin-server">
-        <Fragment slot="description">
-          Un service d'hébergement de snippet de codes. Plusieurs clients
-          (extensions pour IDE et un bot discord) existent sur l'orga.
-        </Fragment>
-      </GitHubCard>
-      <GitHubCard title="Notions" repository="notions">
-        <Fragment slot="description">
-          Ce dépôt contient des cours et des fiches pratiques sur des sujets
-          techniques ainsi que des exercices traitant de concepts particuliers.
-        </Fragment>
-      </GitHubCard>
-      <GitHubCard
-        title="PVC discord bot"
-        subtitle="Private VoIP Channels"
-        repository="pvc"
-      >
-        <Fragment slot="description"
-          >Un bot discord permettant de créer des salons vocaux temporaires
-          façon TeamSpeak. Il suffit d'entrer dans le salon prévu à cet effet et
-          votre salon privé sera automatiquement créé.</Fragment
-        >
-      </GitHubCard>
-      <GitHubCard title="LiveApp MVP" repository="liveapp-mvp">
-        <Fragment slot="description">
-          Une application Electron permettant de lire le chat discord en faisant
-          autre chose en même temps.
-        </Fragment>
-      </GitHubCard>
+      {
+        githubProjects.map((project) => (
+          <GitHubCard
+            title={project.title}
+            subtitle={project.subtitle}
+            repository={project.repository}
+          >
+            <Fragment slot="description" set:text={project.description} />
+          </GitHubCard>
+        ))
+      }
     </CardsContainer>
   </article>
   <article id="youtube">
