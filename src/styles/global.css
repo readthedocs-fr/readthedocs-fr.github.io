@@ -8,12 +8,6 @@ footer {
   background-color: var(--rtd-bg-color);
 }
 
-nav {
-  position: sticky;
-  top: 0;
-  padding-top: 0.25em;
-}
-
 a {
   text-decoration: none;
   color: rgb(150, 220, 150);
@@ -31,15 +25,6 @@ a:hover {
 
 .text-center {
   text-align: center;
-}
-
-.card-v2 {
-  box-shadow: 0 2px 16px #0001;
-  max-width: 600px;
-  margin: 60px auto;
-  padding: 2em 2.5em;
-  background: #fff;
-  border-radius: 10px;
 }
 
 article h1 {
@@ -73,41 +58,11 @@ article a {
   height: 30vh;
 }
 
-#logo svg {
-  height: 22.5vh;
-}
-
-#socials {
-  list-style: none;
-  display: flex;
-  justify-content: space-evenly;
-  margin: 0;
-}
-
-#socials li a svg {
+nav ul li a svg {
   fill: white;
   height: 2em;
 }
 
-#socials li a span {
-  margin-left: 0.35em;
-  color: white;
-  font-size: 2.5em;
-  font-family: "Staatliches", cursive;
-}
-
-#socials li a .discord:hover {
-  color: #8ea1e1;
-}
-
-#socials li a .github:hover {
-  color: #2c974b;
-}
-
-#socials li a .youtube:hover {
-  color: #f00;
-}
-
-#socials li a .twitch:hover {
-  color: #af7afe;
+#logo svg {
+  height: 22.5vh;
 }

@@ -33,3 +33,41 @@ import TwitchLogo from "@/components/logos/TwitchLogo.astro";
     </li>
   </ul>
 </nav>
+
+<style>
+  nav {
+    position: sticky;
+    top: 0;
+    padding-top: 0.25em;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+  }
+
+  span {
+    margin-left: 0.35em;
+    color: white;
+    font-size: 2.5em;
+    font-family: "Staatliches", cursive;
+  }
+
+  .discord:hover {
+    color: #8ea1e1;
+  }
+
+  .github:hover {
+    color: #2c974b;
+  }
+
+  .youtube:hover {
+    color: #f00;
+  }
+
+  .twitch:hover {
+    color: #af7afe;
+  }
+</style>
