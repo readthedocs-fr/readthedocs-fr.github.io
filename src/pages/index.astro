@@ -1,7 +1,10 @@
 ---
 import Card from "@/components/Card.astro";
+import CardsContainer from "@/components/CardsContainer.astro";
 import YoutubeCard from "@/components/YoutubeCard.astro";
 import Layout from "@/layouts/Layout.astro";
+
+// TODO fix accessibilité titres (2 h1 dans la page)
 ---
 
 <Layout title="Read The Docs FR | Accueil">
@@ -61,13 +64,12 @@ import Layout from "@/layouts/Layout.astro";
       Vous pouvez voir ici les projets les plus importants présents sur
       l'organisation GitHub :
     </p>
-    <div class="cards">
-      <Card>
-        <h2>bin-server</h2>
-        <p>
+    <CardsContainer>
+      <Card title="bin-server">
+        <Fragment slot="description">
           Un service d'hébergement de snippet de codes. Plusieurs clients
           (extensions pour IDE et un bot discord) existent sur l'orga.
-        </p>
+        </Fragment>
         <ul class="links">
           <li>
             <a href="https://github.com/readthedocs-fr/bin-server"
@@ -76,75 +78,73 @@ import Layout from "@/layouts/Layout.astro";
           </li>
         </ul>
       </Card>
-      <Card>
-        <h2>Notions</h2>
-        <p>
+      <Card title="Notions">
+        <Fragment slot="description">
           Ce dépôt contient des cours et des fiches pratiques sur des sujets
           techniques ainsi que des exercices traitant de concepts particuliers.
-        </p>
-        <ul class="links">
-          <li>
-            <a href="https://github.com/readthedocs-fr/notions">Dépôt GitHub</a>
-          </li>
-        </ul>
+          <ul class="links">
+            <li>
+              <a href="https://github.com/readthedocs-fr/notions"
+                >Dépôt GitHub</a
+              >
+            </li>
+          </ul>
+        </Fragment>
       </Card>
-      <Card>
-        <h2>PVC discord bot</h2>
-        <h3>Private VoIP Channels</h3>
-        <p>
-          Un bot discord permettant de créer des salons vocaux temporaires façon
-          TeamSpeak. Il suffit d'entrer dans le salon prévu à cet effet et votre
-          salon privé sera automatiquement créé.
-        </p>
+      <Card title="PVC discord bot" subtitle="Private VoIP Channels">
+        <Fragment slot="description"
+          >Un bot discord permettant de créer des salons vocaux temporaires
+          façon TeamSpeak. Il suffit d'entrer dans le salon prévu à cet effet et
+          votre salon privé sera automatiquement créé.</Fragment
+        >
         <ul class="links">
           <li>
             <a href="https://github.com/readthedocs-fr/pvc">Dépôt GitHub</a>
           </li>
         </ul>
       </Card>
-      <Card>
-        <h2>LiveApp MVP</h2>
-        <p>
+      <Card title="LiveApp MVP">
+        <Fragment slot="description">
           Une application Electron permettant de lire le chat discord en faisant
-          autre chose en même temps.<br />
+          autre chose en même temps. <br />
           Un rewrite plus léger est en cours : il sera rendu disponible sur l'organisation
           GitHub quand il sera un minimum utilisable.
-        </p>
-        <ul class="links">
-          <li>
-            <a href="https://github.com/readthedocs-fr/liveapp-mvp"
-              >Dépôt GitHub</a
-            >
-          </li>
-        </ul>
+          <ul class="links">
+            <li>
+              <a href="https://github.com/readthedocs-fr/liveapp-mvp"
+                >Dépôt GitHub</a
+              >
+            </li>
+          </ul>
+        </Fragment>
       </Card>
-    </div>
-  </article>
-  <article id="youtube">
-    <h1>La chaîne YouTube</h1>
-    <p>
-      Vous trouverez ci-dessous quelques rediffusions de live disponibles sur la
-      chaîne YouTube :
-    </p>
-    <article class="cards">
-      <YoutubeCard
-        title="Un serveur IRC asynchrone en Python"
-        date="19/10/2020"
-        description="Création d'un serveur IRC asynchrone minimaliste en Python"
-        videoId="oVQAyQF9jy8"
-      />
-      <YoutubeCard
-        title="Faire un Tetris en Python avec Pygame"
-        date="11/07/2020"
-        description="Création d'un Tetris en Python avec pygame, par TNtube#9999."
-        videoId="XXqM_a_IwVw"
-      />
-      <YoutubeCard
-        title="Un arbre AVL en Python"
-        date="23/06/2020"
-        description="Implémentation d'un arbre AVL en Python par Yann#3290."
-        videoId="JTiJW1FUh7A"
-      />
+    </CardsContainer>
+    <article id="youtube">
+      <h1>La chaîne YouTube</h1>
+      <p>
+        Vous trouverez ci-dessous quelques rediffusions de live disponibles sur
+        la chaîne YouTube :
+      </p>
+      <CardsContainer>
+        <YoutubeCard
+          title="Un serveur IRC asynchrone en Python"
+          date="19/10/2020"
+          description="Création d'un serveur IRC asynchrone minimaliste en Python"
+          videoId="oVQAyQF9jy8"
+        />
+        <YoutubeCard
+          title="Faire un Tetris en Python avec Pygame"
+          date="11/07/2020"
+          description="Création d'un Tetris en Python avec pygame, par TNtube#9999."
+          videoId="XXqM_a_IwVw"
+        />
+        <YoutubeCard
+          title="Un arbre AVL en Python"
+          date="23/06/2020"
+          description="Implémentation d'un arbre AVL en Python par Yann#3290."
+          videoId="JTiJW1FUh7A"
+        />
+      </CardsContainer>
     </article>
   </article>
 </Layout>

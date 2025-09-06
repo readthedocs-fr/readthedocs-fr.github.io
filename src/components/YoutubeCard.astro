@@ -1,13 +1,18 @@
 ---
 import Card from "./Card.astro";
 
+interface Props {
+  title: string;
+  date: string;
+  description: string;
+  videoId: string;
+}
+
 const { title, date, description, videoId } = Astro.props;
 ---
 
-<Card>
-  <h2>{title}</h2>
-  <h3>{date}</h3>
-  <p>{description}</p>
+<Card title={title} subtitle={date}>
+  <Fragment slot="description">{description}</Fragment>
   <iframe
     class="center"
     src=`https://www.youtube-nocookie.com/embed/${videoId}`

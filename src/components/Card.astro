@@ -1,4 +1,18 @@
+---
+import type { JSX } from "astro/jsx-runtime";
+
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
 <article class="card">
+  <h2>{title}</h2>
+  {subtitle && <h3>{subtitle}</h3>}
+  <p><slot name="description" /></p>
   <slot />
 </article>
 

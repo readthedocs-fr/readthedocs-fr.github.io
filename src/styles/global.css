@@ -55,13 +55,6 @@ a:hover {
   border-radius: 10px;
 }
 
-.cards {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .links {
   list-style: none;
   padding-left: 0;
