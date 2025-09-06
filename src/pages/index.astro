@@ -126,24 +126,24 @@ const youtubeCards: YoutubeVideo[] = [
         </Fragment>
       </GitHubCard>
     </CardsContainer>
-    <article id="youtube">
-      <h1>La chaîne YouTube</h1>
-      <p>
-        Vous trouverez ci-dessous quelques rediffusions de live disponibles sur
-        la chaîne YouTube :
-      </p>
-      <CardsContainer>
-        {
-          youtubeCards.map((card) => (
-            <YoutubeCard
-              title={card.title}
-              date={card.date}
-              description={card.description}
-              videoId={card.videoId}
-            />
-          ))
-        }
-      </CardsContainer>
-    </article>
+  </article>
+  <article id="youtube">
+    <h1>La chaîne YouTube</h1>
+    <p>
+      Vous trouverez ci-dessous quelques rediffusions de live disponibles sur la
+      chaîne YouTube :
+    </p>
+    <CardsContainer>
+      {
+        youtubeCards.map((card) => (
+          <YoutubeCard
+            title={card.title}
+            date={card.date}
+            description={card.description}
+            videoId={card.videoId}
+          />
+        ))
+      }
+    </CardsContainer>
   </article>
 </Layout>
