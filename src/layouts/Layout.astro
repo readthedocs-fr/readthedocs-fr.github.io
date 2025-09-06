@@ -1,7 +1,6 @@
 ---
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
 import NavBar from "@/components/NavBar.astro";
+import ReadTheDocsFRLogo from "@/components/logos/ReadTheDocsFRLogo.astro";
 import "@/styles/global.css";
 
 interface Props {
@@ -40,12 +39,22 @@ const { title } = Astro.props;
     />
   </head>
   <body>
-    <Header />
+    <header>
+      <div id="logo">
+        <ReadTheDocsFRLogo />
+      </div>
+    </header>
     <NavBar />
     <main>
       <slot />
     </main>
-    <Footer />
+    <footer>
+      <p>
+        Le <a href="https://github.com/readthedocs-fr/readthedocs-fr.github.io"
+          >code source</a
+        > de ce site est disponible sur GitHub.
+      </p>
+    </footer>
   </body>
 </html>
 
@@ -53,5 +62,13 @@ const { title } = Astro.props;
   body {
     margin: 0;
     font-family: "Overpass", sans-serif;
+  }
+
+  footer {
+    color: white;
+    text-align: center;
+    padding: 0.2em 0;
+    font-size: 1.125em;
+    font-family: "Commissioner", cursive;
   }
 </style>
