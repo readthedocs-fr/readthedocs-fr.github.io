@@ -1,0 +1,32 @@
+---
+import Card from "./Card.astro";
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  repository: string;
+}
+const { title, subtitle, repository } = Astro.props;
+---
+
+<Card title={title} subtitle={subtitle}>
+  <Fragment slot="description"><slot name="description" /></Fragment>
+  <ul>
+    <li>
+      <a href=`https://github.com/readthedocs-fr/${repository}`>Dépôt GitHub</a>
+    </li>
+  </ul>
+</Card>
+
+<style>
+  ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  li {
+    margin: 0 1vw;
+  }
+</style>

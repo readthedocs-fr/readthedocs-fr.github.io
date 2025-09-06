@@ -55,17 +55,6 @@ a:hover {
   border-radius: 10px;
 }
 
-.links {
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.links li {
-  margin: 0 1vw;
-}
-
 article h1 {
   font-size: 2em;
   border-bottom: 0.4em ridge rgba(50, 180, 70, 0.6);
