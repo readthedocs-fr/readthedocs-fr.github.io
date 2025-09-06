@@ -4,6 +4,34 @@ import CardsContainer from "@/components/CardsContainer.astro";
 import YoutubeCard from "@/components/YoutubeCard.astro";
 import Layout from "@/layouts/Layout.astro";
 
+type YoutubeVideo = {
+  title: string;
+  date: string;
+  description: string;
+  videoId: string;
+};
+
+const youtubeCards: YoutubeVideo[] = [
+  {
+    title: "Un serveur IRC asynchrone en Python",
+    date: "19/10/2020",
+    description: "Création d'un serveur IRC asynchrone minimaliste en Python",
+    videoId: "oVQAyQF9jy8",
+  },
+  {
+    title: "Faire un Tetris en Python avec Pygame",
+    date: "11/07/2020",
+    description: "Création d'un Tetris en Python avec pygame, par TNtube#9999.",
+    videoId: "XXqM_a_IwVw",
+  },
+  {
+    title: "Un arbre AVL en Python",
+    date: "23/06/2020",
+    description: "Implémentation d'un arbre AVL en Python par Yann#3290.",
+    videoId: "JTiJW1FUh7A",
+  },
+];
+
 // TODO fix accessibilité titres (2 h1 dans la page)
 ---
 
@@ -126,24 +154,16 @@ import Layout from "@/layouts/Layout.astro";
         la chaîne YouTube :
       </p>
       <CardsContainer>
-        <YoutubeCard
-          title="Un serveur IRC asynchrone en Python"
-          date="19/10/2020"
-          description="Création d'un serveur IRC asynchrone minimaliste en Python"
-          videoId="oVQAyQF9jy8"
-        />
-        <YoutubeCard
-          title="Faire un Tetris en Python avec Pygame"
-          date="11/07/2020"
-          description="Création d'un Tetris en Python avec pygame, par TNtube#9999."
-          videoId="XXqM_a_IwVw"
-        />
-        <YoutubeCard
-          title="Un arbre AVL en Python"
-          date="23/06/2020"
-          description="Implémentation d'un arbre AVL en Python par Yann#3290."
-          videoId="JTiJW1FUh7A"
-        />
+        {
+          youtubeCards.map((card) => (
+            <YoutubeCard
+              title={card.title}
+              date={card.date}
+              description={card.description}
+              videoId={card.videoId}
+            />
+          ))
+        }
       </CardsContainer>
     </article>
   </article>
