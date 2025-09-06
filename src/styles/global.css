@@ -17,6 +17,15 @@ a:hover {
   color: rgb(50, 175, 50);
 }
 
+header svg {
+  height: 22.5vh;
+}
+
+nav ul li a svg {
+  fill: white;
+  height: 2em;
+}
+
 .center {
   display: block;
   margin-left: auto;
@@ -25,44 +34,4 @@ a:hover {
 
 .text-center {
   text-align: center;
-}
-
-article h1 {
-  font-size: 2em;
-  border-bottom: 0.4em ridge rgba(50, 180, 70, 0.6);
-  padding: 0 0.75em;
-  width: max-content;
-}
-
-article a {
-  color: #4d4;
-}
-
-#about-us div {
-  max-width: 75vw;
-  font-size: 1.25em;
-  margin: auto;
-}
-
-#github > p,
-#youtube > p {
-  margin-bottom: 0.5em;
-  display: flex;
-  justify-content: center;
-  font-size: 1.25em;
-}
-
-#youtube iframe {
-  margin-bottom: 1em;
-  width: 30vw;
-  height: 30vh;
-}
-
-nav ul li a svg {
-  fill: white;
-  height: 2em;
-}
-
-#logo svg {
-  height: 22.5vh;
 }
