@@ -46,35 +46,35 @@ const { title } = Astro.props;
       <div id="logo">
         <ReadTheDocsFRLogo />
       </div>
+      <nav>
+        <ul class="center" id="socials">
+          <li>
+            <a href="http://discord.readthedocs.fr/">
+              <DiscordLogo />
+              <span class="discord">Discord</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://github.readthedocs.fr/">
+              <GitHubLogo />
+              <span class="github">GitHub</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://youtube.readthedocs.fr/">
+              <YouTubeLogo />
+              <span class="youtube">YouTube</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://twitch.readthedocs.fr/">
+              <TwitchLogo />
+              <span class="twitch">Twitch</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
-    <nav>
-      <ul class="center" id="socials">
-        <li>
-          <a href="http://discord.readthedocs.fr/">
-            <DiscordLogo />
-            <span class="discord">Discord</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://github.readthedocs.fr/">
-            <GitHubLogo />
-            <span class="github">GitHub</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://youtube.readthedocs.fr/">
-            <YouTubeLogo />
-            <span class="youtube">YouTube</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://twitch.readthedocs.fr/">
-            <TwitchLogo />
-            <span class="twitch">Twitch</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
     <main>
       <slot />
     </main>
