@@ -3,7 +3,8 @@
   "extends": ["config:recommended"],
   "packageRules": [
     {
-      "extends": ["monorepo:astro"],
+      "groupName": "astro",
+      "matchPackageNames": ["astro", "@astrojs/*"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     }
