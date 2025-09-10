@@ -4,7 +4,6 @@
   "packageRules": [
     {
       "extends": ["monorepo:astro"],
-      "matchPackageNames": ["astro", "@astrojs/*"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     }
