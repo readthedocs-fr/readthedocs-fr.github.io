@@ -17,7 +17,7 @@ const { title } = Astro.props;
   <head>
     <title>{title}</title>
 
-    <meta charset="utf8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:title" content="RTD FR | Read The Docs FR" />
     <meta
@@ -30,16 +30,19 @@ const { title } = Astro.props;
       name="description"
       content="Rejoignez une communauté francophone de développeurs axée sur l'entraide et le travail collaboratif autour de projets open source"
     />
-
     <meta name="author" content="Antoine JT" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Overpass&family=Commissioner&family=Staatliches&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600&family=Commissioner:wght@400;600&family=Staatliches&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <header>
-      <ReadTheDocsFRLogo />
+      <div class="header-ambient" aria-hidden="true"></div>
+      <div class="logo-wrapper">
+        <ReadTheDocsFRLogo />
+      </div>
+      <p class="tagline">Communauté francophone de développeurs</p>
     </header>
     <NavBar />
     <main>
@@ -56,16 +59,62 @@ const { title } = Astro.props;
 </html>
 
 <style>
-  body {
-    margin: 0;
-    font-family: "Overpass", sans-serif;
+  header {
+    position: relative;
+    text-align: center;
+    padding: 3.5rem 1rem 2rem;
+    overflow: hidden;
+  }
+
+  .header-ambient {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 80% at 50% 0%, rgba(0, 230, 118, 0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .logo-wrapper {
+    display: inline-block;
+    position: relative;
+    filter: drop-shadow(0 0 32px rgba(0, 230, 118, 0.25));
+    transition: filter 0.4s ease;
+  }
+
+  .logo-wrapper:hover {
+    filter: drop-shadow(0 0 48px rgba(0, 230, 118, 0.45));
+  }
+
+  .logo-wrapper :global(svg) {
+    height: clamp(80px, 16vh, 160px);
+    display: block;
+  }
+
+  .tagline {
+    margin: 1rem 0 0;
+    color: var(--text-secondary);
+    font-family: "Commissioner", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
   }
 
   footer {
-    color: white;
+    color: var(--text-secondary);
     text-align: center;
-    padding: 0.2em 0;
-    font-size: 1.125em;
-    font-family: "Commissioner", cursive;
+    padding: 2rem 1rem;
+    font-size: 0.875rem;
+    font-family: "Commissioner", sans-serif;
+    border-top: 1px solid var(--border);
+    margin-top: 5rem;
+  }
+
+  footer :global(a) {
+    color: var(--accent);
+  }
+
+  footer :global(a):hover {
+    color: var(--accent-dim);
   }
 </style>

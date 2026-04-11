@@ -8,27 +8,27 @@ import TwitchLogo from "@/components/logos/TwitchLogo.astro";
 <nav>
   <ul id="socials">
     <li>
-      <a href="http://discord.readthedocs.fr/">
+      <a href="http://discord.readthedocs.fr/" class="nav-link discord">
         <DiscordLogo />
-        <span class="discord">Discord</span>
+        <span>Discord</span>
       </a>
     </li>
     <li>
-      <a href="http://github.readthedocs.fr/">
+      <a href="http://github.readthedocs.fr/" class="nav-link github">
         <GitHubLogo />
-        <span class="github">GitHub</span>
+        <span>GitHub</span>
       </a>
     </li>
     <li>
-      <a href="http://youtube.readthedocs.fr/">
+      <a href="http://youtube.readthedocs.fr/" class="nav-link youtube">
         <YouTubeLogo />
-        <span class="youtube">YouTube</span>
+        <span>YouTube</span>
       </a>
     </li>
     <li>
-      <a href="http://twitch.readthedocs.fr/">
+      <a href="http://twitch.readthedocs.fr/" class="nav-link twitch">
         <TwitchLogo />
-        <span class="twitch">Twitch</span>
+        <span>Twitch</span>
       </a>
     </li>
   </ul>
@@ -38,36 +38,64 @@ import TwitchLogo from "@/components/logos/TwitchLogo.astro";
   nav {
     position: sticky;
     top: 0;
-    padding-top: 0.25em;
+    z-index: 100;
+    background: rgba(11, 13, 18, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
   }
 
   ul {
     list-style: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
     margin: 0;
+    padding: 0.5rem 1rem;
   }
 
-  span {
-    margin-left: 0.35em;
-    color: white;
-    font-size: 2.5em;
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 1.1rem;
+    border-radius: 50px;
+    color: var(--text-secondary);
     font-family: "Staatliches", cursive;
+    font-size: 1.35rem;
+    letter-spacing: 0.05em;
+    transition: color var(--transition), background var(--transition), transform var(--transition);
   }
 
-  .discord:hover {
-    color: #8ea1e1;
+  .nav-link :global(svg) {
+    fill: currentColor;
+    height: 1.4rem;
+    width: auto;
+    flex-shrink: 0;
   }
 
-  .github:hover {
-    color: #2c974b;
+  .nav-link:hover {
+    transform: translateY(-2px);
   }
 
-  .youtube:hover {
-    color: #f00;
+  .nav-link.discord:hover {
+    color: #7289da;
+    background: rgba(114, 137, 218, 0.12);
   }
 
-  .twitch:hover {
-    color: #af7afe;
+  .nav-link.github:hover {
+    color: #3fb950;
+    background: rgba(63, 185, 80, 0.1);
+  }
+
+  .nav-link.youtube:hover {
+    color: #ff4444;
+    background: rgba(255, 68, 68, 0.1);
+  }
+
+  .nav-link.twitch:hover {
+    color: #bf94ff;
+    background: rgba(191, 148, 255, 0.12);
   }
 </style>

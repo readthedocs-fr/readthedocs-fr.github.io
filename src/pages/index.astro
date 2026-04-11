@@ -71,14 +71,12 @@ const githubProjects: GitHubProject[] = [
     repository: "liveapp-mvp",
   },
 ];
-
-// TODO fix accessibilité titres (2 h1 dans la page)
 ---
 
 <Layout title="Read The Docs FR | Accueil">
   <article id="about-us">
-    <h1>Qui sommes-nous ?</h1>
-    <div>
+    <h2 class="section-title">Qui sommes-nous ?</h2>
+    <div class="about-body">
       <p>
         Nous sommes une
         <strong>communauté francophone de programmation</strong> présente sur Discord.
@@ -127,8 +125,8 @@ const githubProjects: GitHubProject[] = [
     </div>
   </article>
   <article id="github">
-    <h1>L'organisation GitHub</h1>
-    <p>
+    <h2 class="section-title">L'organisation GitHub</h2>
+    <p class="section-lead">
       Vous pouvez voir ici les projets les plus importants présents sur
       l'organisation GitHub :
     </p>
@@ -147,8 +145,8 @@ const githubProjects: GitHubProject[] = [
     </CardsContainer>
   </article>
   <article id="youtube">
-    <h1>La chaîne YouTube</h1>
-    <p>
+    <h2 class="section-title">La chaîne YouTube</h2>
+    <p class="section-lead">
       Vous trouverez ci-dessous quelques rediffusions de live disponibles sur la
       chaîne YouTube :
     </p>
@@ -168,28 +166,66 @@ const githubProjects: GitHubProject[] = [
 </Layout>
 
 <style>
-  article h1 {
-    font-size: 2em;
-    border-bottom: 0.4em ridge rgba(50, 180, 70, 0.6);
-    padding: 0 0.75em;
-    width: max-content;
+  article {
+    padding: 3rem 1.5rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
   }
 
-  article a {
-    color: #4d4;
+  article + article {
+    border-top: 1px solid var(--border);
   }
 
-  #about-us div {
-    max-width: 75vw;
-    font-size: 1.25em;
-    margin: auto;
+  .section-title {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-family: "Commissioner", sans-serif;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
   }
 
-  #github > p,
-  #youtube > p {
-    margin-bottom: 0.5em;
-    display: flex;
-    justify-content: center;
-    font-size: 1.25em;
+  .section-title::after {
+    content: "";
+    display: inline-block;
+    width: 2rem;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .section-lead {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+  }
+
+  #about-us .about-body {
+    max-width: 760px;
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  #about-us .about-body strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  #about-us .about-body a {
+    color: var(--accent);
+    border-bottom: 1px solid rgba(0, 230, 118, 0.3);
+    transition: border-color var(--transition);
+  }
+
+  #about-us .about-body a:hover {
+    border-color: var(--accent);
+  }
+
+  #about-us .about-body p {
+    margin: 0 0 1.2rem;
   }
 </style>

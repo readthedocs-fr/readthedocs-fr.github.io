@@ -1,6 +1,4 @@
 ---
-import type { JSX } from "astro/jsx-runtime";
-
 interface Props {
   title: string;
   subtitle?: string;
@@ -11,24 +9,59 @@ const { title, subtitle } = Astro.props;
 
 <article class="card">
   <h2>{title}</h2>
-  {subtitle && <h3>{subtitle}</h3>}
-  <p><slot name="description" /></p>
+  {subtitle && <p class="subtitle">{subtitle}</p>}
+  <p class="description"><slot name="description" /></p>
   <slot />
 </article>
 
 <style>
-  article {
-    margin-bottom: 1vh;
-    box-shadow: 1px 1px 6px green;
-    min-width: 15vw;
-    max-width: 35vw;
-    margin: 1em;
-    padding: 1vh 1.5vw;
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.75rem;
+    margin: 0.75rem;
+    min-width: 260px;
+    max-width: 360px;
+    flex: 1;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-card);
+    transition:
+      transform var(--transition),
+      border-color var(--transition),
+      box-shadow var(--transition);
+    display: flex;
+    flex-direction: column;
   }
 
-  h3 {
+  .card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    font-family: "Commissioner", sans-serif;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+  }
+
+  .subtitle {
     font-style: italic;
-    font-weight: 100;
-    font-size: 0.9em;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin: 0 0 0.85rem;
+    font-weight: 300;
+  }
+
+  .description {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    flex: 1;
   }
 </style>

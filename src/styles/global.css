@@ -1,29 +1,58 @@
 :root {
-  --rtd-bg-color: #111111;
+  --bg-primary: #0b0d12;
+  --bg-secondary: #12151e;
+  --bg-card: rgba(18, 21, 30, 0.85);
+  --accent: #00e676;
+  --accent-dim: #00c45e;
+  --accent-glow: rgba(0, 230, 118, 0.12);
+  --text-primary: #e8eaed;
+  --text-secondary: #8b92a8;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(0, 230, 118, 0.3);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 16px 48px rgba(0, 230, 118, 0.1), 0 4px 24px rgba(0, 0, 0, 0.5);
 }
 
-header,
-nav,
-footer {
-  background-color: var(--rtd-bg-color);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  background-image:
+    radial-gradient(ellipse 90% 40% at 50% 0%, rgba(0, 230, 118, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 30% at 80% 60%, rgba(0, 150, 255, 0.03) 0%, transparent 60%);
+  color: var(--text-primary);
+  margin: 0;
+  font-family: "Overpass", sans-serif;
+  line-height: 1.65;
+  min-height: 100vh;
 }
 
 a {
   text-decoration: none;
-  color: rgb(150, 220, 150);
+  color: var(--accent);
+  transition: color var(--transition);
 }
 
 a:hover {
-  color: rgb(50, 175, 50);
+  color: var(--accent-dim);
 }
 
-header svg {
-  height: 22.5vh;
-}
-
-nav ul li a svg {
-  fill: white;
-  height: 2em;
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.2;
 }
 
 .center {
