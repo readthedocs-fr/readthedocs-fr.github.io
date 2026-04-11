@@ -5,7 +5,13 @@ import YouTubeLogo from "@/components/logos/YouTubeLogo.astro";
 import TwitchLogo from "@/components/logos/TwitchLogo.astro";
 ---
 
-<nav>
+<nav aria-label="Navigation principale">
+  <ul class="page-links">
+    <li><a href="#about-us" class="anchor-link">À propos</a></li>
+    <li><a href="#github" class="anchor-link">Projets</a></li>
+    <li><a href="#youtube" class="anchor-link">YouTube</a></li>
+  </ul>
+  <div class="divider" aria-hidden="true"></div>
   <ul id="socials">
     <li>
       <a href="http://discord.readthedocs.fr/" class="nav-link discord">
@@ -39,20 +45,59 @@ import TwitchLogo from "@/components/logos/TwitchLogo.astro";
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(11, 13, 18, 0.75);
+    background: var(--nav-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 0.25rem 1rem;
   }
 
-  ul {
+  .page-links {
     list-style: none;
     display: flex;
-    justify-content: center;
+    gap: 0.1rem;
+    margin: 0;
+    padding: 0.25rem 0;
+  }
+
+  .anchor-link {
+    display: inline-block;
+    padding: 0.3rem 0.85rem;
+    border-radius: 50px;
+    color: var(--text-secondary);
+    font-family: "Commissioner", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color var(--transition), background var(--transition);
+  }
+
+  .anchor-link:hover {
+    color: var(--accent);
+    background: var(--accent-glow);
+  }
+
+  .divider {
+    width: 1px;
+    height: 1.4rem;
+    background: var(--border);
+    margin: 0 0.5rem;
+    flex-shrink: 0;
+  }
+
+  #socials {
+    list-style: none;
+    display: flex;
     flex-wrap: wrap;
     gap: 0.25rem;
     margin: 0;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 0;
   }
 
   .nav-link {
@@ -98,4 +143,5 @@ import TwitchLogo from "@/components/logos/TwitchLogo.astro";
     color: #bf94ff;
     background: rgba(191, 148, 255, 0.12);
   }
+</style>
 </style>

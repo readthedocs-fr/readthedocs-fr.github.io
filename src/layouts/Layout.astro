@@ -17,6 +17,17 @@ const { title } = Astro.props;
   <head>
     <title>{title}</title>
 
+    <!-- Anti-FOUC : applique le thème sauvegardé avant le premier rendu -->
+    <script is:inline>
+      (function () {
+        try {
+          if (localStorage.getItem("rtd-theme") === "light") {
+            document.documentElement.setAttribute("data-theme", "light");
+          }
+        } catch (_) {}
+      })();
+    </script>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:title" content="RTD FR | Read The Docs FR" />
@@ -43,11 +54,33 @@ const { title } = Astro.props;
         <ReadTheDocsFRLogo />
       </div>
       <p class="tagline">Communauté francophone de développeurs</p>
+
+      <button id="theme-toggle" aria-label="Changer de thème" title="Basculer thème clair / sombre">
+        <!-- Sombre -> Clair -->
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <!-- Clair -> Sombre -->
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
     </header>
     <NavBar />
     <main>
       <slot />
     </main>
+
+    <button id="back-to-top" aria-label="Retour en haut de page">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"/>
+      </svg>
+    </button>
+
     <footer>
       <p>
         Le <a href="https://github.com/readthedocs-fr/readthedocs-fr.github.io"
@@ -55,6 +88,36 @@ const { title } = Astro.props;
         > de ce site est disponible sur GitHub.
       </p>
     </footer>
+
+    <script is:inline>
+      // ── Thème ──────────────────────────────────────────────────
+      const toggle = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+
+      function applyTheme(theme) {
+        if (theme === "light") {
+          html.setAttribute("data-theme", "light");
+        } else {
+          html.removeAttribute("data-theme");
+        }
+        try { localStorage.setItem("rtd-theme", theme); } catch (_) {}
+      }
+
+      toggle.addEventListener("click", () => {
+        applyTheme(html.getAttribute("data-theme") === "light" ? "dark" : "light");
+      });
+
+      // ── Retour en haut ─────────────────────────────────────────
+      const btn = document.getElementById("back-to-top");
+
+      window.addEventListener("scroll", () => {
+        btn.classList.toggle("visible", window.scrollY > 300);
+      }, { passive: true });
+
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
   </body>
 </html>
 
@@ -70,7 +133,7 @@ const { title } = Astro.props;
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 70% 80% at 50% 0%, rgba(0, 230, 118, 0.08) 0%, transparent 65%);
+      radial-gradient(ellipse 70% 80% at 50% 0%, var(--header-glow) 0%, transparent 65%);
     pointer-events: none;
   }
 
@@ -100,6 +163,43 @@ const { title } = Astro.props;
     text-transform: uppercase;
   }
 
+  /* ── Bouton de thème ── */
+  #theme-toggle {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 2.6rem;
+    height: 2.6rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    transition: border-color var(--transition), color var(--transition), background var(--transition);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  #theme-toggle:hover {
+    border-color: var(--border-hover);
+    color: var(--accent);
+    background: var(--accent-glow);
+  }
+
+  #theme-toggle :global(svg) {
+    width: 1.1rem;
+    height: 1.1rem;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+
+  /* ── Footer ── */
   footer {
     color: var(--text-secondary);
     text-align: center;

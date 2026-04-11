@@ -7,13 +7,21 @@ interface Props {
   repository: string;
 }
 const { title, subtitle, repository } = Astro.props;
+const repoUrl = `https://github.com/readthedocs-fr/${repository}`;
+const previewUrl = `https://opengraph.github.com/repo/readthedocs-fr/${repository}`;
 ---
 
 <Card title={title} subtitle={subtitle}>
+  <img
+    slot="preview"
+    src={previewUrl}
+    alt={`Aperçu du projet ${title} sur GitHub`}
+    loading="lazy"
+  />
   <Fragment slot="description"><slot name="description" /></Fragment>
   <div class="actions">
     <a
-      href={`https://github.com/readthedocs-fr/${repository}`}
+      href={repoUrl}
       class="btn-github"
       target="_blank"
       rel="noopener noreferrer"

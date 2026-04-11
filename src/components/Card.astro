@@ -5,13 +5,17 @@ interface Props {
 }
 
 const { title, subtitle } = Astro.props;
+const hasPreview = Astro.slots.has("preview");
 ---
 
 <article class="card">
-  <h2>{title}</h2>
-  {subtitle && <p class="subtitle">{subtitle}</p>}
-  <p class="description"><slot name="description" /></p>
-  <slot />
+  {hasPreview && <div class="preview"><slot name="preview" /></div>}
+  <div class="card-body">
+    <h2>{title}</h2>
+    {subtitle && <p class="subtitle">{subtitle}</p>}
+    <p class="description"><slot name="description" /></p>
+    <slot />
+  </div>
 </article>
 
 <style>
@@ -19,10 +23,9 @@ const { title, subtitle } = Astro.props;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 1.5rem 1.75rem;
     margin: 0.75rem;
     min-width: 260px;
-    max-width: 360px;
+    max-width: 370px;
     flex: 1;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -33,6 +36,7 @@ const { title, subtitle } = Astro.props;
       box-shadow var(--transition);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
 
   .card:hover {
@@ -41,8 +45,35 @@ const { title, subtitle } = Astro.props;
     box-shadow: var(--shadow-card-hover);
   }
 
+  .preview {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    overflow: hidden;
+    background: var(--bg-secondary);
+    flex-shrink: 0;
+  }
+
+  .preview :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .card:hover .preview :global(img) {
+    transform: scale(1.04);
+  }
+
+  .card-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-family: "Commissioner", sans-serif;
     font-weight: 600;
     color: var(--text-primary);
